@@ -18,7 +18,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
-        android:onClick="@{}"
+        android:onClick="@{() -> clickListener.onClick(character)}"
         app:cardElevation="4dp"
         app:cardCornerRadius="4dp">
 
@@ -31,10 +31,10 @@
             android:padding="8dp"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
             android:textSize="18sp"
-            android:text="Harry Potter"
+            android:text="@{character.name}"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:text="Frog" />
+            tools:text="Harry Potter" />
 
     </com.google.android.material.card.MaterialCardView>
 
