@@ -3,9 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/USER/AndroidStudioProjects/TheHogwarts/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/TheHogwarts/app/src/main/res/layout/fragment_character_detail.xml" value="0.12132725430597771" />
-        <entry key="..\:/Users/USER/AndroidStudioProjects/TheHogwarts/app/src/main/res/layout/fragment_character_list.xml" value="0.6" />
-        <entry key="..\:/Users/USER/AndroidStudioProjects/TheHogwarts/app/src/main/res/layout/list_view_item.xml" value="0.1" />
+        <entry key="..\:/Users/USER/AndroidStudioProjects/TheHogwarts/app/src/main/res/layout/fragment_character_list.xml" value="0.16" />
+        <entry key="..\:/Users/USER/AndroidStudioProjects/TheHogwarts/app/src/main/res/layout/list_view_item.xml" value="0.2747395833333333" />
       </map>
     </option>
   </component>
