@@ -1,5 +1,6 @@
 package com.example.thehogwarts.ui
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -34,6 +35,7 @@ class CharactersViewModel : ViewModel() {
             } catch (e: Exception) {
                 _characters.value = listOf()
                 _status.value = CharactersApiStatus.ERROR
+                Log.e("ErrorMsg", "${e.message}")
             }
         }
     }
