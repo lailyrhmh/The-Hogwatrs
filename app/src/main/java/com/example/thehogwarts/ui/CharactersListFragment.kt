@@ -21,7 +21,7 @@ class CharactersListFragment : Fragment() {
     ): View {
         val binding = FragmentCharacterListBinding.inflate(inflater)
 
-        viewModel.getCharacters()
+        viewModel.getCharacterList()
         binding.lifecycleOwner = this
         binding.viewModel = viewModel
         binding.recyclerView.adapter = CharactersListAdapter(CharactersListener { characters ->
