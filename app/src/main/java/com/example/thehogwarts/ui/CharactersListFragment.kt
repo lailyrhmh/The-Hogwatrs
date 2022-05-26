@@ -18,9 +18,10 @@ class CharactersListFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         val binding = FragmentCharacterListBinding.inflate(inflater)
 
+        viewModel.getCharacters()
         binding.lifecycleOwner = this
         binding.viewModel = viewModel
         binding.recyclerView.adapter = CharactersListAdapter(CharactersListener { characters ->

@@ -15,27 +15,27 @@ enum class CharactersApiStatus {LOADING, ERROR, DONE}
 class CharactersViewModel : ViewModel() {
 
     private val _characters = MutableLiveData<Characters>()
-    val chararacters: LiveData<Characters> = _characters
+    val characters: LiveData<Characters> = _characters
 
     private val _char = MutableLiveData<List<Characters>>()
     val char: LiveData<List<Characters>> = _char
 
-    private val _status = MutableLiveData<String>()
-    val status: LiveData<String> = _status
+    private val _status = MutableLiveData<CharactersApiStatus>()
+    val status: LiveData<CharactersApiStatus> = _status
 
     init {
         getCharacters()
     }
 
-    private fun getCharacters() {
+    fun getCharacters() {
         viewModelScope.launch {
-//            _status.value = CharactersApiStatus.LOADING
+            _status.value = CharactersApiStatus.LOADING
             try {
                 _char.value = CharactersApi.retrofitService.getCharacters()
-//                _status.value = CharactersApiStatus.DONE
+                _status.value = CharactersApiStatus.DONE
             } catch (e: Exception) {
-//                _char.value = ListOf()
-                _status.value = "Failure: ${e.message}"
+                _char.value = listOf()
+                _status.value = CharactersApiStatus.ERROR
             }
         }
     }
