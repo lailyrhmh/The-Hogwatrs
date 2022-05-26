@@ -5,7 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.thehogwarts.network.Characters
-import com.example.thehogwarts.network.MarsApi
+import com.example.thehogwarts.network.CharactersApi
 import kotlinx.coroutines.launch
 
 //import androidx.lifecycle.viewModelScope
@@ -14,8 +14,13 @@ enum class CharactersApiStatus {LOADING, ERROR, DONE}
 
 class CharactersViewModel : ViewModel() {
 
-    private val _status = MutableLiveData<String>()
+    private val _characters = MutableLiveData<Characters>()
+    val chararacters: LiveData<Characters> = _characters
 
+    private val _char = MutableLiveData<List<Characters>>()
+    val char: LiveData<List<Characters>> = _char
+
+    private val _status = MutableLiveData<String>()
     val status: LiveData<String> = _status
 
     init {
@@ -24,20 +29,18 @@ class CharactersViewModel : ViewModel() {
 
     private fun getCharacters() {
         viewModelScope.launch {
-//            val listResult = MarsApi.retrofitService.getCharacters()
-//            _status.value = listResult
-            _status.value = "ini tes hasil"
-
+//            _status.value = CharactersApiStatus.LOADING
+            try {
+                _char.value = CharactersApi.retrofitService.getCharacters()
+//                _status.value = CharactersApiStatus.DONE
+            } catch (e: Exception) {
+//                _char.value = ListOf()
+                _status.value = "Failure: ${e.message}"
+            }
         }
-        _status.value = "Set the Mars API status response here!"
     }
 
     fun onCharacterClicked(characters: Characters) {
-        // TODO: Set the amphibian object
+        _characters.value = characters
     }
 }
-//
-//private fun getCharacters() {
-////    viewModelScope.launch {
-////    }
-//}
