@@ -24,8 +24,10 @@ class CharactersViewModel : ViewModel() {
 
     private fun getCharacters() {
         viewModelScope.launch {
-            val listResult = MarsApi.retrofitService.getCharacters()
-            _status.value = listResult
+//            val listResult = MarsApi.retrofitService.getCharacters()
+//            _status.value = listResult
+            _status.value = "ini tes hasil"
+
         }
         _status.value = "Set the Mars API status response here!"
     }

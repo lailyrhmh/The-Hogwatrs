@@ -4,7 +4,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.scalars.ScalarsConverterFactory
 import retrofit2.http.GET
 
-private const val BASE_URL = "http://hp-api.herokuapp.com/api"
+private const val BASE_URL = "http://hp-api.herokuapp.com/api/"
 
 private val retrofit = Retrofit.Builder()
     .addConverterFactory(ScalarsConverterFactory.create())
@@ -12,8 +12,8 @@ private val retrofit = Retrofit.Builder()
     .build()
 
 interface HogwartsApiService {
-    @GET("characters")
-    suspend fun getCharacters(): String
+//    @GET("characters")
+//    suspend fun getCharacters(): String
 }
 
 object MarsApi {
