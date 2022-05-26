@@ -8,8 +8,6 @@ import com.example.thehogwarts.network.Characters
 import com.example.thehogwarts.network.CharactersApi
 import kotlinx.coroutines.launch
 
-//import androidx.lifecycle.viewModelScope
-
 enum class CharactersApiStatus {LOADING, ERROR, DONE}
 
 class CharactersViewModel : ViewModel() {

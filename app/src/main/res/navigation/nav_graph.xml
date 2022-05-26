@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/charactersListFragment"
         android:name="com.example.thehogwarts.ui.CharactersListFragment"
-        android:label="AmphibianListFragment" >
+        android:label="CharactersListFragment" >
         <action
             android:id="@+id/action_charactersListFragment_to_charactersDetailFragment"
             app:destination="@id/charactersDetailFragment" />
@@ -16,6 +16,6 @@
     <fragment
         android:id="@+id/charactersDetailFragment"
         android:name="com.example.thehogwarts.ui.CharactersDetailFragment"
-        android:label="fragment_amphibian_detail"
+        android:label="fragment_character_detail"
         tools:layout="@layout/fragment_character_detail" />
 </navigation>
