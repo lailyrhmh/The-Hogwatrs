@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/charactersListFragment"
         android:name="com.example.thehogwarts.ui.CharactersListFragment"
-        android:label="CharactersListFragment" >
+        android:label="@string/app_name" >
         <action
             android:id="@+id/action_charactersListFragment_to_charactersDetailFragment"
             app:destination="@id/charactersDetailFragment" />

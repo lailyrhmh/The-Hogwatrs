@@ -28,8 +28,8 @@ class CharactersListAdapter(val clickListener: CharactersListener) :
         }
 
         override fun areContentsTheSame(oldItem: Characters, newItem: Characters): Boolean {
-            return oldItem.species == newItem.species && oldItem.gender == newItem.gender
-                    && oldItem.house == newItem.house
+            return oldItem.latin_name == newItem.latin_name && oldItem.animal_type == newItem.animal_type
+                    && oldItem.active_time == newItem.active_time
         }
 
     }

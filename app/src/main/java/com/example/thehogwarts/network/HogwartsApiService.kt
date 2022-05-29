@@ -6,7 +6,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.http.GET
 
-private const val BASE_URL = "https://hp-api.herokuapp.com/api/"
+private const val BASE_URL = "https://zoo-animal-api.herokuapp.com/animals/"
 
 private val moshi = Moshi.Builder()
     .add(KotlinJsonAdapterFactory())
@@ -18,7 +18,7 @@ private val retrofit = Retrofit.Builder()
     .build()
 
 interface HogwartsApiService {
-    @GET("characters")
+    @GET("rand")
     suspend fun getCharacters(): List<Characters>
 }
 
