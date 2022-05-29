@@ -24,12 +24,12 @@ class CharactersListAdapter(val clickListener: CharactersListener) :
     companion object DiffCallback : DiffUtil.ItemCallback<Characters>() {
 
         override fun areItemsTheSame(oldItem: Characters, newItem: Characters): Boolean {
-            return oldItem.name == newItem.name
+            return oldItem.title == newItem.title
         }
 
         override fun areContentsTheSame(oldItem: Characters, newItem: Characters): Boolean {
-            return oldItem.latin_name == newItem.latin_name && oldItem.animal_type == newItem.animal_type
-                    && oldItem.active_time == newItem.active_time
+            return oldItem.genre == newItem.genre && oldItem.platform == newItem.platform
+                    && oldItem.publisher == newItem.publisher
         }
 
     }
